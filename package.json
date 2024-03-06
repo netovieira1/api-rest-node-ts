@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node-dev ./src/index.ts",
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
-    "production": "tsc node./build;index.js",
+    "start": "tsc node./build/index.js",
     "test": "jest"
   },
   "author": "Neto",
