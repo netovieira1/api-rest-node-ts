@@ -1,12 +1,38 @@
 import { Router } from 'express'
-import {StatusCodes} from 'http-status-codes'
+
+import {CidadesController} from './../controllers'
+CidadesController.create
 
 const router = Router()
 
-router.post('/teste', (req, res) => {
-  console.log(req)
-
-  return res.status(StatusCodes.ACCEPTED).json(req.body)
+router.get('/', (_, res) => {
+  return res.send('Olá')
 })
+
+router.post('/teste', (req, res) => {
+ return res.status(204).json(req.body)
+})
+
+
+router.post( '/cidades', 
+  CidadesController.createValidation, 
+  CidadesController.create
+)
+router.get( '/cidades', 
+  CidadesController.getAllValidation, 
+  CidadesController.getAll
+)
+router.get( '/cidades/:id', 
+  CidadesController.getAllByIdValidation, 
+  CidadesController.getById,
+)
+router.put( '/cidades/:id', 
+  CidadesController.updateByIdValidation, 
+  CidadesController.updateById,
+)
+router.delete( '/cidades/:id', 
+  CidadesController.deleteByIdValidation, 
+  CidadesController.deleteById,
+)
 
 export { router }
