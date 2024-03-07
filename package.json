@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "ts-node-dev ./src/index.ts",
     "dev": "tsx watch src/index.ts",
-    "start": "node ./build/index.js",
-    "build": "tsc",
+    "production": "node ./build/index.js",
+    "postinstall": "tsc",
     "test": "jest"
   },
   "author": "Neto",
@@ -33,6 +34,6 @@
     "typescript": "^5.3.3"
   },
   "engines": {
-    "node": "20.11.1"
+    "node": "18.x"
   }
 }
