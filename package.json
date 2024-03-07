@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "production": "node ./build/index.js",
-    "postinstall": "tsc",
+    "start": "node ./build/index.js",
+    "buid": "tsc",
     "test": "jest"
   },
   "author": "Neto",
