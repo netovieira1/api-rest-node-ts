@@ -5,6 +5,7 @@ import * as yup from 'yup'
 import { validation } from '../../shared/middlewares'
 import { IUsuario } from '../../database/models'
 import { UsuariosProvider } from '../../database/providers/usuarios'
+import { passwordCrypto } from '../../shared/services'
 
 
 interface IBodyProps extends Omit<IUsuario, 'id' | 'nome'> { }
@@ -30,7 +31,8 @@ export const signIn = async (req: Request<{}, {}, IBodyProps>, res: Response) =>
     })
   }
 
-  if (senha !== result.senha) {
+  const passwordMatch = await passwordCrypto.verifyPassword(senha, result.senha)
+  if (!passwordMatch) {
     return res.status(StatusCodes.UNAUTHORIZED).json({
       errors: {
         default: 'Email ou senha inválidos.'
