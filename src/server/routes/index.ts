@@ -10,10 +10,10 @@ router.get('/', (_, res) => {
 })
 
 
+router.get( '/cidades', ensureAuthenticated, CidadesController.getAllValidation, CidadesController.getAll)
+
 router.post( '/cidades', ensureAuthenticated, 
 CidadesController.createValidation, CidadesController.create)
-
-router.get( '/cidades', ensureAuthenticated, CidadesController.getAllValidation, CidadesController.getAll)
 
 router.get( '/cidades/:id', ensureAuthenticated, CidadesController.getByIdValidation,CidadesController.getById)
 
@@ -38,10 +38,6 @@ router.delete( '/pessoas/:id', ensureAuthenticated, PessoasController.deleteById
 router.post( '/entrar', UsuariosController.signInValidation, UsuariosController.signIn)
 
 router.post( '/cadastrar', UsuariosController.signUpValidation, UsuariosController.signUp)
-
-
-
-
 
 
 
