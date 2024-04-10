@@ -24,6 +24,7 @@ export const create = async (req: Request<{}, {}, ICidade>, res: Response) => {
       }
     })
   }
+  console.log(result)
 
   return res.status(StatusCodes.CREATED).json(result)
 }
