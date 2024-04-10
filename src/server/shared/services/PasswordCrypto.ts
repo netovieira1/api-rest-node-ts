@@ -12,7 +12,7 @@ const verifyPassword = async (password: string, hashedPassword: string) => {
   return await compare(password, hashedPassword)
 }
 
-export const PasswordCrypto = {
+export const passwordCrypto = {
   hashPassword,
   verifyPassword
 }
