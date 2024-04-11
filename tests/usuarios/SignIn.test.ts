@@ -3,7 +3,7 @@ import { testServer } from "../jest.setup"
 
 describe('Pessoas - Create', () => {
   beforeAll(async () => {
-    const resCidade = await testServer
+    await testServer
     .post('/cadastrar')
     .send({
       nome: 'Joao',
