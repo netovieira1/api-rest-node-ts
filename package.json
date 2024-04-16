@@ -7,7 +7,7 @@
     "start": "ts-node-dev ./src/index.ts",
     "dev": "tsx watch src/index.ts",
     "production": "node ./build/index.js",
-    "postinstall": "tsc",
+    "preproduction": "tsc",
     "knex:rollback-all": "npx knex --knexfile ./src/server/database/knex/Environment.ts migrate:rollback --all",
     "knex:rollback": "npx knex --knexfile ./src/server/database/knex/Environment.ts migrate:rollback",
     "knex:migrate": "npx knex --knexfile ./src/server/database/knex/Environment.ts migrate:latest",

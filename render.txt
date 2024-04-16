@@ -1,0 +1,6 @@
+Build Command = npm install && npm run postinstall
+
+Start Command = npm start
+
+
+
