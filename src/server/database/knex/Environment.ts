@@ -28,7 +28,7 @@ export const test: Knex.Config = {
 
 export const production: Knex.Config = {
   ...development,
-  client: 'sqlite3',
+  client: 'pg',
   migrations: {
     directory: path.resolve(__dirname, '..', 'migrations')
   },
